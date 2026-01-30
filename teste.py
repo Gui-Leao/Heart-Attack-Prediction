@@ -15,3 +15,23 @@ try:
     print(EDA_utils.checkNormality())
 except ModuleNotFoundError:
     print('Absolute import failed')
+
+try:
+    import EDA_utils
+    print(EDA_utils.__file__)
+except ModuleNotFoundError:
+    print('Absolute i222mport failed')
+
+
+import pkgutil
+
+mods = [m.name for m in pkgutil.iter_modules()]
+#print(mods)
+
+
+
+import src
+print(src.__file__)
+
+from src import EDA_utils
+print(EDA_utils.__file__)

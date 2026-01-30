@@ -6,10 +6,20 @@ readme = "README.md"
 requires-python = ">=3.12.1"
 dependencies = [
     "category-encoders>=2.8.1",
+    "fastapi>=0.128.0",
     "lightgbm>=4.6.0",
     "optuna>=4.3.0",
     "pandas>=2.2.3",
     "scikit-learn>=1.6.1",
     "seaborn>=0.13.2",
+    "uvicorn>=0.40.0",
     "xgboost>=3.0.2",
 ]
+[tool.setuptools.packages.find]
+# Informa ao setuptools para encontrar os pacotes dentro da pasta 'src'.
+# Essencial para a estrutura de layout com 'src/'.
+where = ["src"]
+
+[tool.setuptools]
+# Mapeia o diretório raiz de pacotes para 'src'.
+package-dir = { "" = "src" }
